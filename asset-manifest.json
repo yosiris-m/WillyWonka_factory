@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/WillyWonka_factory/static/css/main.c39dbb34.css",
+    "main.js": "/WillyWonka_factory/static/js/main.dac463bc.js",
+    "static/js/787.5c01281e.chunk.js": "/WillyWonka_factory/static/js/787.5c01281e.chunk.js",
+    "static/media/no_result_search.png": "/WillyWonka_factory/static/media/no_result_search.3c32b7a88ae54205d66d.png",
+    "static/media/missing_image.jpg": "/WillyWonka_factory/static/media/missing_image.5882c20d3ddf67c36e30.jpg",
+    "index.html": "/WillyWonka_factory/index.html",
+    "main.c39dbb34.css.map": "/WillyWonka_factory/static/css/main.c39dbb34.css.map",
+    "main.dac463bc.js.map": "/WillyWonka_factory/static/js/main.dac463bc.js.map",
+    "787.5c01281e.chunk.js.map": "/WillyWonka_factory/static/js/787.5c01281e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c39dbb34.css",
+    "static/js/main.dac463bc.js"
+  ]
+}
