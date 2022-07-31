@@ -25,7 +25,7 @@ export default function IceCreamDetails({ iceCream }) {
       <img
         className={styles.picture}
         src={iceCream.pictureUrl}
-        alt="Ice cream picture"
+        alt="Ice cream"
       />
       <div>
         <h2>{iceCream.flavor}</h2>

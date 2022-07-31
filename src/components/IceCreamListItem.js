@@ -10,7 +10,7 @@ export default function IceCreamListItem({ iceCream }) {
       <img
         className={styles.picture}
         src={iceCream.pictureUrl}
-        alt="Ice cream picture"
+        alt="Ice cream"
         onError={({ currentTarget }) => {
           currentTarget.onerror = null; // prevents looping
           currentTarget.src = missingImage;

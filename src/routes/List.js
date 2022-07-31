@@ -13,15 +13,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export default function List() {
   const [iceCreams, setIceCreams] = useState([]);
   const [filterText, setFilterText] = useState("");
+  const [filterTextSubmitted, setFilterTextSubmitted] = useState("");
   const [sortOrder, setSortOrder] = useState("asc");
 
-  const loadIceCreams = () => {
-    fetchList(sortOrder, filterText).then((data) => setIceCreams(data));
-  };
-
   useEffect(() => {
-    loadIceCreams();
-  }, [sortOrder]);
+    fetchList(sortOrder, filterTextSubmitted).then((data) =>
+      setIceCreams(data)
+    );
+  }, [sortOrder, filterTextSubmitted]);
 
   const filterInputOnChange = (e) => {
     setFilterText(e.target.value);
@@ -29,7 +28,7 @@ export default function List() {
 
   const filterFormOnSubmit = (e) => {
     e.preventDefault();
-    loadIceCreams();
+    setFilterTextSubmitted(filterText);
   };
 
   const setAscOrder = () => {
@@ -63,14 +62,18 @@ export default function List() {
       </form>
 
       <div className={styles.results}>
-        {iceCreams.length === 0 && filterText !== "" ? (
+        {iceCreams.length === 0 && filterTextSubmitted !== "" ? (
           <div className={styles.noResult}>
             <img
               className={styles.imageNoResult}
               src={noResultSearch}
-              alt="no result picture"
+              alt="no result"
             />
-            <span>Sorry, we didn't found ice creams...</span>
+            <span>
+              Sorry, we didn't found ice creams with text{" "}
+              <strong>"{filterTextSubmitted}</strong>
+              "...
+            </span>
           </div>
         ) : (
           <div className={styles.box}>

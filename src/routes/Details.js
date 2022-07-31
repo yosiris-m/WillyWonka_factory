@@ -13,7 +13,7 @@ export default function Details() {
 
   useEffect(() => {
     fetchDetails(id).then((data) => setIceCream(data));
-  }, []);
+  }, [id]);
 
   return (
     <section className={styles.section}>
