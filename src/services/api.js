@@ -4,8 +4,12 @@ function getPictureUrl(iceCream) {
   return `${baseUrl}/${iceCream.picture}`;
 }
 
-export function fetchList() {
-  return fetch(`${baseUrl}/icecreams`)
+export function fetchList(search) {
+  let url = `${baseUrl}/icecreams`;
+  if (search) {
+    url += `?q=${encodeURIComponent(search)}`;
+  }
+  return fetch(url)
     .then((response) => response.json())
     .then((data) => {
       return data.map((iceCream) => {
