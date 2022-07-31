@@ -1,3 +1,17 @@
-.subTitle {
+.section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 50rem;
+    margin: 0 auto;
+}
+
+.linkHome {
     text-align: center;
+    text-decoration: none;
+    color: #2e2e2f;
+}
+
+.navBar {
+    padding: 1rem 0;
 }

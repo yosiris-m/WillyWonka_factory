@@ -22,27 +22,28 @@ export default function IceCreamDetails({ iceCream }) {
 
   return (
     <div className={styles.detail}>
-      {isFavorite ? (
-        <FontAwesomeIcon
-          icon={faHeartCircleMinus}
-          className={styles.removeFavorite}
-          onClick={handleRemoveFavorite}
-        />
-      ) : (
-        <FontAwesomeIcon
-          icon={faHeartCirclePlus}
-          className={styles.addFavorite}
-          onClick={handleAddFavorite}
-        />
-      )}
-
       <img
         className={styles.picture}
         src={iceCream.pictureUrl}
         alt="Ice cream picture"
       />
-      <strong>{iceCream.flavor}</strong>
-      <p>{iceCream.description}</p>
+      <div>
+        <h2>{iceCream.flavor}</h2>
+        <p>{iceCream.description}</p>
+        {isFavorite ? (
+          <FontAwesomeIcon
+            icon={faHeartCircleMinus}
+            className={styles.removeFavorite}
+            onClick={handleRemoveFavorite}
+          />
+        ) : (
+          <FontAwesomeIcon
+            icon={faHeartCirclePlus}
+            className={styles.addFavorite}
+            onClick={handleAddFavorite}
+          />
+        )}
+      </div>
     </div>
   );
 }

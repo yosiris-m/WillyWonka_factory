@@ -1,20 +1,22 @@
 .detail {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-shadow: -2px 0 10px 1px rgba(82, 80, 80, 0.62);
-    width: 50rem;
-    margin: 0 auto;
+    background-color: #ffffff54;
+    padding: 2rem;
+}
+@media all and (min-width: 768px) {
+    .detail {
+        flex-direction: row;
+    }
 }
 
 .picture {
     width: 19rem;
-    padding: 1rem 0 1rem 0;
+    margin-right: 2rem;
 }
 
 .removeFavorite {
-    color: red;
+    color: #ed5290;
     cursor: pointer;
     font-size: 2rem;
 }

@@ -4,35 +4,46 @@
     flex-direction: column;
     max-width: 50rem;
     margin: 0 auto;
-
 }
 
 .form {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
     font-family: sans-serif;
     font-size: 1.2rem;
     padding: 2rem 1rem  1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 4rem;
+    left: 0;
+    background-color: #f8e5df;
 }
 
 .filter {
     font-size: 1rem;
-    margin-right: 0.4rem;
     margin-left: 0.4rem;
     padding-left: 0.4rem;
+    height: 1.5rem;
+}
+
+.filterSubmit {
+    height: 1.9rem;
 }
 
 .order {
-    margin-left: 0.4rem;
+    margin-left: 2rem;
+    cursor: pointer;
 }
 
-.orderSelect {
-    margin-left: 0.4rem;
-    font-size: 1rem;
+.results {
+    margin-top: 6rem;
 }
+
 .box {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     justify-content: center;
     text-decoration: none;
     align-items: center;
@@ -41,15 +52,16 @@
 @media all and (min-width: 768px) {
     .box {
         grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
     }
 }
 
 @media all and (min-width: 1200px) {
     .box {
         grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
     }
 }
-
 
 .noResult {
     display: flex;

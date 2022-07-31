@@ -1,11 +1,14 @@
 .container {
     display: flex;
     flex-direction: column;
-    margin-top: 2rem;
     justify-content: center;
     text-decoration: none;
     align-items: center;
-    box-shadow: -2px 0 10px 1px rgba(0,0,0,0.62)
+    background: #ffffff54;
+}
+
+.container:hover {
+    box-shadow: -2px 0 10px 1px rgba(0,0,0,0.20)
 }
 
 
@@ -17,7 +20,7 @@
 }
 
 .favorite {
-    color: red;
+    color: #ed5290;
     margin-right: 0.2rem;
 }
 
