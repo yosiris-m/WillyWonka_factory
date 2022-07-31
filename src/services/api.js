@@ -1,3 +1,5 @@
+import { isFavorite } from "./localStorage";
+
 const baseUrl = "https://heytrade-ww-icecreams.herokuapp.com";
 
 function getPictureUrl(iceCream) {
@@ -17,6 +19,7 @@ export function fetchList(sortOrder, search) {
           id: iceCream.id,
           flavor: iceCream.flavor,
           pictureUrl: getPictureUrl(iceCream),
+          isFavorite: isFavorite(iceCream.id),
         };
       });
     });
@@ -29,6 +32,7 @@ export function fetchDetails(id) {
       return {
         ...data,
         pictureUrl: getPictureUrl(data),
+        isFavorite: isFavorite(data.id),
       };
     });
 }

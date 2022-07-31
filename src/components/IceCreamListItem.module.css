@@ -16,6 +16,11 @@
     padding-top: 0.6rem;
 }
 
+.favorite {
+    color: red;
+    margin-right: 0.2rem;
+}
+
 @media all and (min-width: 768px) {
     .picture {
         width: 14rem;

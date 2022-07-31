@@ -12,3 +12,15 @@
     width: 19rem;
     padding: 1rem 0 1rem 0;
 }
+
+.removeFavorite {
+    color: red;
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+.addFavorite {
+    color: grey;
+    cursor: pointer;
+    font-size: 2rem;
+}
