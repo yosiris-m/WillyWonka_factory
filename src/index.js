@@ -10,7 +10,7 @@ import List from "./routes/List";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/WillyWonka_factory">
       <Routes>
         <Route path="/" element={<App />}>
           <Route path="/" element={<List />} />
