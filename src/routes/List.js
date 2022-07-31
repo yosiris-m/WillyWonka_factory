@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { fetchList } from "../services/api";
 import IceCreamListItem from "../components/IceCreamListItem";
 import styles from "./List.module.css";
+import noResultSearch from "../images/no_result_search.png";
 
 export default function List() {
   const [iceCreams, setIceCreams] = useState([]);
@@ -30,27 +31,38 @@ export default function List() {
   };
 
   return (
-    <main style={{ padding: "1rem 0" }}>
-      <h2 className={styles.subTitle}>List</h2>
-      <form onSubmit={filterFormOnSubmit}>
-        <label htmlFor="filterInput">Filter:</label>
-        <input
-          type="text"
-          name="filterInput"
-          value={filterText}
-          onChange={filterInputOnChange}
-        />
+    <main className={styles.container}>
+      <form onSubmit={filterFormOnSubmit} className={styles.form}>
+        <label htmlFor="filterInput">
+          Filter:
+          <input
+            className={styles.filter}
+            type="text"
+            name="filterInput"
+            value={filterText}
+            onChange={filterInputOnChange}
+          />
+        </label>
         <button type="submit">Search</button>
+        <div className={styles.order}>
+          <span> Order by :</span>
+          <select onChange={sortOrderOnChange} className={styles.orderSelect}>
+            <option value="asc">Ascending order (A -> Z)</option>
+            <option value="desc">Descending order (Z -> A)</option>
+          </select>
+        </div>
       </form>
-      <div>
-        <select onChange={sortOrderOnChange}>
-          <option value="asc">Ascending order (A -> Z)</option>
-          <option value="desc">Descending order (Z -> A)</option>
-        </select>
-      </div>
+
       <div className={styles.box}>
         {iceCreams.length === 0 ? (
-          <span>No results...</span>
+          <div className={styles.noResult}>
+            <span>No results search...</span>
+            <img
+              className={styles.imageNoResult}
+              src={noResultSearch}
+              alt="no result picture"
+            />
+          </div>
         ) : (
           iceCreams.map((iceCream) => (
             <IceCreamListItem key={iceCream.id} iceCream={iceCream} />

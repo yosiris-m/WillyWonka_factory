@@ -1,20 +1,23 @@
 .container {
     display: flex;
     flex-direction: column;
-    margin-top: 20px;
+    margin-top: 2rem;
     justify-content: center;
     text-decoration: none;
     align-items: center;
+    box-shadow: -2px 0 10px 1px rgba(0,0,0,0.62)
 }
 
-.photo {
+
+.picture {
     width: 10rem;
     height: 10rem;
     object-fit: cover;
+    padding-top: 0.6rem;
 }
 
 @media all and (min-width: 768px) {
-    .photo {
+    .picture {
         width: 14rem;
         height: 14rem;
         margin: 0 1rem ;
@@ -22,9 +25,15 @@
 }
 
 @media all and (min-width: 1200px) {
-    .photo {
+    .picture {
         width: 16rem;
         height: 16rem;
         margin: 0 2rem ;
     }
+}
+
+.flavor {
+    padding: 0.5rem 0 1rem 0;
+    font-size: 1.2rem;
+    color: #2e2e2f;
 }
