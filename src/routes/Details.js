@@ -1,8 +1,10 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import "./Details.module.css";
 
 import { useEffect, useState } from "react";
 import { fetchDetails } from "../services/api";
 import IceCreamDetails from "../components/IceCreamDetails";
+import styles from "./Details.module.css";
 
 export default function Details() {
   const [iceCream, setIceCream] = useState();
@@ -17,8 +19,13 @@ export default function Details() {
   }
 
   return (
-    <main style={{ padding: "1rem 0" }}>
-      <h2>Details</h2>
+    <main>
+      <nav>
+        <Link className="linkHome" to="/">
+          Home
+        </Link>
+      </nav>
+      <h2 className={styles.subTitle}>Ice cream details </h2>
       <IceCreamDetails iceCream={iceCream} />
     </main>
   );
