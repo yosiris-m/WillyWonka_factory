@@ -4,10 +4,10 @@ function getPictureUrl(iceCream) {
   return `${baseUrl}/${iceCream.picture}`;
 }
 
-export function fetchList(search) {
-  let url = `${baseUrl}/icecreams`;
+export function fetchList(sortOrder, search) {
+  let url = `${baseUrl}/icecreams?_sort=flavor&_order=${sortOrder}`;
   if (search) {
-    url += `?q=${encodeURIComponent(search)}`;
+    url += `&q=${encodeURIComponent(search)}`;
   }
   return fetch(url)
     .then((response) => response.json())

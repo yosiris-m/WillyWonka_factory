@@ -6,19 +6,27 @@ import styles from "./List.module.css";
 export default function List() {
   const [iceCreams, setIceCreams] = useState([]);
   const [filterText, setFilterText] = useState("");
+  const [sortOrder, setSortOrder] = useState("asc");
+
+  const loadIceCreams = () => {
+    fetchList(sortOrder, filterText).then((data) => setIceCreams(data));
+  };
 
   useEffect(() => {
-    fetchList().then((data) => setIceCreams(data));
-  }, []);
+    loadIceCreams();
+  }, [sortOrder]);
 
   const filterInputOnChange = (e) => {
-    const newFilterText = e.target.value;
-    setFilterText(newFilterText);
+    setFilterText(e.target.value);
   };
 
   const filterFormOnSubmit = (e) => {
     e.preventDefault();
-    fetchList(filterText).then((data) => setIceCreams(data));
+    loadIceCreams();
+  };
+
+  const sortOrderOnChange = (e) => {
+    setSortOrder(e.target.value);
   };
 
   return (
@@ -34,6 +42,12 @@ export default function List() {
         />
         <button type="submit">Search</button>
       </form>
+      <div>
+        <select onChange={sortOrderOnChange}>
+          <option value="asc">Ascending order (A -> Z)</option>
+          <option value="desc">Descending order (Z -> A)</option>
+        </select>
+      </div>
       <div className={styles.box}>
         {iceCreams.length === 0 ? (
           <span>No results...</span>
